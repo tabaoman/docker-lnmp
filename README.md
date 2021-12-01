@@ -9,13 +9,16 @@ docker-compose
 
 #### Before Installation
 **Volumn:** Map the working folder to WEBROOT (See in php service in docker-compose.yml)
-**MySQL Users:** Set user/password and root password (See in mysql service in docker-compose.yml)
+**MySQL Users:** Set database, user/password and root password (See in mysql service in docker-compose.yml)
 **Redis Password:** Specify in command (See in redis service in docker-compose.yml)
 
 #### After Installation
-**MySQL*** 
+**MySQL**
 * $ docker exec -it mysql mysql -uroot -proot123
+* USE mysql;
+* UPDATE `user` SET `host`='%' WHERE `user`='root' AND `host`='"%"';
 * GRANT ALL PRIVILEGES ON *.* TO 'homestead';
+* FLUSH PRIVILEGES;
 
 #### Installation
 
