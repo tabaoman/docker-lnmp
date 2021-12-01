@@ -12,6 +12,11 @@ docker-compose
 **MySQL Users:** Set user/password and root password (See in mysql service in docker-compose.yml)
 **Redis Password:** Specify in command (See in redis service in docker-compose.yml)
 
+#### After Installation
+**MySQL*** 
+* $ docker exec -it mysql mysql -uroot -proot123
+* GRANT ALL PRIVILEGES ON *.* TO 'homestead';
+
 #### Installation
 
 1.  `git clone https://github.com/tabaoman/docker-compose-lnmp.git lnmp`
