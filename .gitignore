@@ -1,0 +1,6 @@
+.DS_Store
+mysql/data
+mysql/logs
+nginx/log
+php/log
+
