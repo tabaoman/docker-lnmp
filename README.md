@@ -31,3 +31,19 @@ FLUSH PRIVILEGES;
 3.  `docker-compose build`
 4.  `docker-compose up -d`
 
+## Known Issue and Fix
+**Error: Sub-process /usr/bin/dpkg returned an error code (1)**
+Login the php images with docker. For example:
+```shell
+docker exec -it ced0a7d1661ac0235717f9995cc91c3e47e7d03912be9ebec13ef0a68e354b4d /bin/sh
+```
+```shell
+cd /etc/apt/sources.list.d 
+rm nodesource.list
+apt-get --fix-broken install
+apt-get update
+apt-get remove nodejs
+apt-get remove nodejs-doc
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash
+apt-get install -y nodejs
+```
