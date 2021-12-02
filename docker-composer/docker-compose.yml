@@ -26,7 +26,7 @@ services:
         ports:
             - "9000:9000"
         volumes:
-            - "/Users/tony/code:/var/www/html"
+            - "/Users/tony/code/chefus-dish:/var/www/html"
             - "../php74/etc:/usr/local/etc"
             - "../php74/log:/var/log/php"
         stdin_open: true

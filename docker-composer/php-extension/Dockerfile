@@ -28,5 +28,11 @@ RUN docker-php-ext-configure gd  --with-webp=/usr/include/webp --with-jpeg=/usr/
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Nodejs and npm
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash
+RUN cd /etc/apt/sources.list.d \
+    && rm -f nodesource.list \
+    && apt-get --fix-broken install \
+    && apt-get update \
+    && apt-get remove -y nodejs \
+    && apt-get remove -y nodejs-doc
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
