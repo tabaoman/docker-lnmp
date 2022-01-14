@@ -58,7 +58,7 @@ services:
             - MYSQL_ROOT_HOST="%"
         networks:
             app_net:
-                ipv4_address: 10.10.10.1     
+                ipv4_address: 10.10.10.1
         container_name: "compose-mysql"
     redis:
         image: redis:5
